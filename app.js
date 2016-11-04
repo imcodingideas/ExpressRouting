@@ -32,6 +32,10 @@ app.get('/repeat/:word/:times', function (req, res) {
 
 });
 
+app.get('*', function (req, res) {
+   res.send('Sorry, page not found... What are you doing with your life?');
+});
+
 app.listen(3000, function () {
    console.log('Server is running on port 3000');
 });
