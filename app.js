@@ -20,6 +20,18 @@ app.get('/speak/:animal', function (req, res) {
 
 });
 
+app.get('/repeat/:word/:times', function (req, res) {
+    var wordToRepeat = req.params.word;
+    var numberOfTimes = req.params.times;
+    var result = "";
+
+    for(var i = 0; i < numberOfTimes; i++) {
+        result += " " + wordToRepeat;
+    }
+    res.send(result);
+
+});
+
 app.listen(3000, function () {
    console.log('Server is running on port 3000');
 });
